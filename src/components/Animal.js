@@ -7,7 +7,7 @@ class Animal extends React.Component {
 		super(props)
 
 		this.state= {
-			edit:false
+			edit:false,
 		}
 
 		this.handleEditMode = this.handleEditMode.bind(this)
@@ -25,11 +25,13 @@ class Animal extends React.Component {
     });
     }
 
+    //Erase animal
 
 	handleDeleteAnimal(id){
 		this.props.handleDeleteAnimal(id)
 	}
 	
+	// edit animal
 	handleEditAnimal(){
 		
 		this.props.handleEditAnimal({
@@ -46,6 +48,9 @@ class Animal extends React.Component {
 		this.setState({edit: !this.state.edit})
 	}
 
+
+	
+
 	render(){
 
 		const {name, breed, id, age, weight} = this.props
@@ -58,10 +63,10 @@ class Animal extends React.Component {
       				? 
       					<div> 
       						<h3> Editar Animal</h3>
-      						<p> Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} /></p>
-      						<p> Breed: <input type="text" value={this.state.breed} name ="breed" onChange={this.handleInputChange} /></p>
-      						<p> Age: <input type="text" value={this.state.age} name ="age" onChange={this.handleInputChange} /></p>
-      						<p> Weight: <input type="text" value={this.state.weight} name ="weight" onChange={this.handleInputChange} /></p>
+      						<p> Name: <input type="text" value={this.state.name} placeholder={name} name="name" onChange={this.handleInputChange} /></p>
+      						<p> Breed: <input type="text" value={this.state.breed} placeholder={breed} name ="breed" onChange={this.handleInputChange} /></p>
+      						<p> Age: <input type="text" value={this.state.age} placeholder={age} name ="age" onChange={this.handleInputChange} /></p>
+      						<p> Weight: <input type="text" value={this.state.weight} placeholder={weight} name ="weight" onChange={this.handleInputChange} /></p>
       	      				<Button bsStyle="success" onClick={this.handleEditAnimal} >Guardar</Button>
 
       					</div> 

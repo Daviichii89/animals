@@ -19,13 +19,17 @@ class AnimalContainer extends React.Component {
 	}
 
 
+
+
 	handleAddAnimal(animal){
 
 		this.setState({animals:[
 			...this.state.animals,
 			{...animal, id: this.state.animals.length}
 			]})
-		}
+		
+			
+	}
 
 	handleDeleteAnimal(animalId){
 		this.setState({animals:

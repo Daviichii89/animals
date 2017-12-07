@@ -1,6 +1,6 @@
 import React from 'react'
 import Animal from './Animal'
-import {Panel, Alert} from 'react-bootstrap'
+import {Panel, Alert, Col, Row} from 'react-bootstrap'
 
 class AnimalList extends React.Component {
 
@@ -30,7 +30,8 @@ class AnimalList extends React.Component {
 			
 			<div>
 				<p>Lista</p>
-			
+				<Row>
+				<Col xs={6} md={4}>
 				<Panel>
 					{
 						rows && rows.length <= 0 ? 
@@ -38,6 +39,8 @@ class AnimalList extends React.Component {
 					}
 
 				</Panel>
+				</Col>
+				</Row>
 			</div>
 
 
