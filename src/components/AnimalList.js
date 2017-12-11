@@ -8,40 +8,33 @@ class AnimalList extends React.Component {
 
 	render(){
 
-		const {animals} = this.props;
+		const {animals, animal_id} = this.props;
 
 		var rows = []
 
 		animals ? animals.map((animal) => 
 			rows.push(<Animal 
-				name={animal.name} 
-				breed={animal.breed}
-				age={animal.age}
-				weight={animal.weight}
-				key={"a"+animal.id}
-				id={animal.id}
+				{...animal}
+				key={'animal'+ animal_id}
 				handleDeleteAnimal={this.props.handleDeleteAnimal}
-				handleEditAnimal={this.props.handleEditAnimal}
-
-				/>)
+				handleEditAnimal={this.props.handleEditAnimal} />)
 		) : null
 
 		return (
 			
-			<div>
-				<p>Lista</p>
-				<Row>
-				<Col xs={6} md={4}>
+			
 				<Panel>
-					{
-						rows && rows.length <= 0 ? 
-						<Alert bsStyle="warning"> No hay animales en la lista </Alert> : rows
-					}
 
+				<p>Lista</p>
+					<Row>
+						{
+							rows && rows.length <= 0 ? 
+							<Alert bsStyle="warning"> No hay animales en la lista </Alert> : rows
+						}
+					</Row>
 				</Panel>
-				</Col>
-				</Row>
-			</div>
+				
+			
 
 
 

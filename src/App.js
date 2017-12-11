@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import AnimalContainer from './components/AnimalContainer'
+import ContactContainer from './components/ContactContainer'
 import './App.css';
 import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
@@ -34,7 +35,7 @@ class App extends Component {
           <Nav>
             <NavItem eventKey={1} href="#">Perros</NavItem>
             <NavItem eventKey={2} href="#">Gatos</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown eventKey={3} title="Contactos" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
               <MenuItem eventKey={3.2}>Another action</MenuItem>
               <MenuItem eventKey={3.3}>Something else here</MenuItem>
@@ -47,6 +48,7 @@ class App extends Component {
 
         <Grid>
           <AnimalContainer />
+          <ContactContainer />
           
         </Grid>
       </div>

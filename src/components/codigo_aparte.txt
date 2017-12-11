@@ -1,0 +1,9 @@
+			//<DayPickerSingleDateController 
+			//	firstDayOfWeek={1}
+			//	keepOpenOnDateSelect={true}
+			//	hideKeyboardShortcutsPanel={true}
+			//	focused={true}
+			//	startDate={moment()}
+			//	date={moment()}
+			//	numberOfMonths={1}
+			/>
