@@ -11,16 +11,10 @@ class AnimalForm extends React.Component {
 		this.state={name:'', breed:'', age:'', weight:'', size:'Small'}
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.handleInsertAnimal = this.handleInsertAnimal.bind(this)
+		this.handleClearForm = this.handleClearForm.bind(this)
 		
 	}
 
-	handleClearForm () {
-		this.setState({
-  			name: '', breed: '', age: '', weight: ''
-  		})
-
-
-	}
 	    
 
 
@@ -35,9 +29,7 @@ class AnimalForm extends React.Component {
 
     this.setState({
       [name]: value,
-      [breed]: value,
-      [age]: value,
-      [weight]: value
+
     });
 
  	 
@@ -51,7 +43,16 @@ class AnimalForm extends React.Component {
   		})
 
   		
-  	}z
+  	}
+
+	handleClearForm () {
+		this.setState({
+  			name: '', breed: '', age: '', weight: ''
+  		})
+
+
+	}
+
 
 
 	
@@ -99,7 +100,7 @@ class AnimalForm extends React.Component {
 				</label>
 				<br /><br />
 				<Button bsStyle="success" onClick={this.handleInsertAnimal} disabled={!formEmpty}> Crear </Button>
-				<Button bsStyle="warning" onClick={this.handleClearForm} disabled={!formEmpty}> Limpiar </Button>
+				<Button bsStyle="warning" onClick={this.handleClearForm}> Limpiar </Button>
 			</Panel>
 			</Col>
 			</Row>

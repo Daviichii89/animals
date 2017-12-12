@@ -11,11 +11,12 @@ class ContactForm extends React.Component {
 		this.state={name:'', lastname:'', type:'Small'}
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.handleInsertContact = this.handleInsertContact.bind(this)
+		this.handleClearForm = this.handleClearForm.bind(this)
 		
 	}
 
 	handleClearForm () {
-		this.setState({
+		this.state({
   			name: '', lastname: ''
   		})
 
@@ -84,7 +85,7 @@ class ContactForm extends React.Component {
 				</label>
 				<br /><br />
 				<Button bsStyle="success" onClick={this.handleInsertContact} disabled={!formEmpty}> Crear </Button>
-				<Button bsStyle="warning" onClick={this.handleClearForm} disabled={!formEmpty}> Limpiar </Button>
+				<Button bsStyle="warning" onClick={this.handleClearForm} > Limpiar </Button>
 			</Panel>
 			</Col>
 			</Row>

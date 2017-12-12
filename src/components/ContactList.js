@@ -15,7 +15,7 @@ class ContactList extends React.Component {
 		contacts ? contacts.map((contact) => 
 			rows.push(<Contact 
 				{...contact}
-				key={"contact"+ contact_id}
+				key={"contact"+ contact.contact_id}
 				handleDeleteContact={this.props.handleDeleteContact}
 				handleEditContact={this.props.handleEditContact} />)
 		) : null

@@ -58,7 +58,7 @@ class Contact extends React.Component {
 
 	render(){
 
-		const {name, lastname, type} = this.props
+		const {name, lastname, type, contact_id} = this.props
 		const {edit} = this.state
 
 		return (
@@ -89,7 +89,7 @@ class Contact extends React.Component {
       					<div>
       						<p>{lastname}</p>
       						<p>{type}</p>  		
-      						<Button bsStyle="danger" onClick={() => this.handleDeleteContact()} > Eliminar </Button>
+      						<Button bsStyle="danger" onClick={() => this.handleDeleteContact(contact_id)} > Eliminar </Button>
       						{' '}
     						<Button bsStyle="warning" onClick={this.handleEditContact} >Editar</Button>
       					</div>}

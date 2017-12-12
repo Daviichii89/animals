@@ -2,9 +2,10 @@ import React from 'react'
 import {Panel, Button, Col} from 'react-bootstrap'
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css'
-import {DayPickerSingleDateController} from 'react-dates';
+import {SingleDatePicker} from 'react-dates';
 import moment from 'moment'
 import PropTypes from 'prop-types'
+import Galeria from './Galeria.js'
 
 
 
@@ -65,20 +66,13 @@ class Animal extends React.Component {
 
 	render(){
 
-		const {name, breed, id, age, weight, arrived, decription, size, status, adopted, adopted_date} = this.props
+		const {name, breed, id, age, weight, arrived, decription, size, status, adopted, adopted_date, animal_id} = this.props
 		const {edit} = this.state
 
 		return (
 
 			<Col xs={6} md={6} lg={4}>
-			<DayPickerSingleDateController 
-				firstDayOfWeek={1}
-				keepOpenOnDateSelect={true}
-				hideKeyboardShortcutsPanel={true}
-				focused={true}
-				startDate={moment()}
-				date={moment()}
-				numberOfMonths={1} />
+
 
 			<Panel header={name} bsStyle="info">
       			
@@ -90,7 +84,22 @@ class Animal extends React.Component {
       						<p> Breed: <input type="text" value={this.state.breed} name ="breed" onChange={this.handleInputChange} /></p>
       						<p> Age: <input type="text" value={this.state.age} name ="age" onChange={this.handleInputChange} /></p>
       						<p> Weight: <input type="text" value={this.state.weight} name ="weight" onChange={this.handleInputChange} /></p>
-      						<p> Arrived: <input type="text" value={this.state.arrived} name ="arrived" onChange={this.handleInputChange} /></p>
+      						<p> Arrived: 	<SingleDatePicker
+                  							firstDayOfWeek={1}
+                  							hideKeyboardShortcutsPanel={true}
+                  							date={moment(this.state.arrived)}
+                  							numberOfMonths={1}
+                  							focused={this.state.focused}
+                  							onDateChange={date => this.setState({ arrived: date.toString() })}
+                  							onFocusChange={({ focused }) => this.setState({ focused })}
+                  							isOutsideRange={() => false}
+                  							id="date_input"
+                  							small="true"
+                  							showDefaultInputIcon="true"
+                  							noBorder="true"
+                  							initial_Date="Moment{_}"
+                  							displayFormat="DD/MM/YYYY" />
+                  			</p>
       						<p> Description: <input type="text" value={this.state.description} name ="description" onChange={this.handleInputChange} /></p>
       						<p> Size: <select value={this.state.size} name ="size" onChange={this.handleInputChange}>
       							<option value="Small">Small</option>
@@ -105,16 +114,17 @@ class Animal extends React.Component {
 
       				: 
       					<div>
+      						<Galeria />
       						<p>{breed}</p>
       						<p>{age}</p>
       						<p>{weight}</p>
-      						<p>{arrived} <Button bsStyle="primary" onClick="muestraCalendario">Calendario</Button></p>
+      						<p>{moment(arrived).format("DD/MM/YYYY")}</p>
       						<p>{decription}</p>
       						<p>{size}</p>
       						<p>{status}</p>
       						<p>{adopted}</p>
       						<p>{adopted_date}</p>
-      						<Button bsStyle="danger" onClick={() => this.handleDeleteAnimal(id)} > Eliminar </Button>
+      						<Button bsStyle="danger" onClick={() => this.handleDeleteAnimal(animal_id)} > Eliminar </Button>
       						{' '}
     						<Button bsStyle="warning" onClick={this.handleEditAnimal} >Editar</Button>
       					</div>}

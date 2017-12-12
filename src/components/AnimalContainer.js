@@ -23,10 +23,10 @@ class AnimalContainer extends React.Component {
 
 			this.state = {
 				animals: [
-					{"animal_id":"23","name":"Toby","age":"5","breed":"Perro","weight":"22KG","arrived":"2017-07-19","description":"asdsa","size":"Large","status":"1","adopted":"0","adopted_date":null},
-					{"animal_id":"22","name":"Penny","age":"3","breed":"Gato","weight":"5KG","arrived":"2017-07-08","description":"asd","size":"Medium","status":"1","adopted":"0","adopted_date":null},
-					{"animal_id":"21","name":"Symba","age":"8","breed":"Perro","weight":"20KG","arrived":"2017-07-26","description":"asdasd","size":"Large","status":"1","adopted":"0","adopted_date":"2017-08-22 00:00:00"},
-					{"animal_id":"26","name":"Kovu","age":"1","breed":"Gato","weight":"5KG","arrived":"2017-08-22","description":"A","size":"Large","status":"1","adopted":"0","adopted_date":null}
+					{"animal_id":"23","name":"Toby","age":5,"breed":"Perro","weight":"22KG","arrived":"2017-07-19","description":"asdsa","size":"Large","status":"1","adopted":"0","adopted_date":null},
+					{"animal_id":"22","name":"Penny","age":3,"breed":"Gato","weight":"5KG","arrived":"2017-07-08","description":"asd","size":"Medium","status":"1","adopted":"0","adopted_date":null},
+					{"animal_id":"21","name":"Symba","age":8,"breed":"Perro","weight":"20KG","arrived":"2017-07-26","description":"asdasd","size":"Large","status":"1","adopted":"0","adopted_date":"2017-08-22 00:00:00"},
+					{"animal_id":"26","name":"Kovu","age":1,"breed":"Gato","weight":"5KG","arrived":"2017-08-22","description":"A","size":"Large","status":"1","adopted":"0","adopted_date":null}
 				],
 				showAnimals: false,
 				showForm: false

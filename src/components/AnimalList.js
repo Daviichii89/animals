@@ -8,14 +8,14 @@ class AnimalList extends React.Component {
 
 	render(){
 
-		const {animals, animal_id} = this.props;
+		const {animals} = this.props;
 
 		var rows = []
 
 		animals ? animals.map((animal) => 
 			rows.push(<Animal 
 				{...animal}
-				key={'animal'+ animal_id}
+				key={'animal'+ animal.animal_id}
 				handleDeleteAnimal={this.props.handleDeleteAnimal}
 				handleEditAnimal={this.props.handleEditAnimal} />)
 		) : null
